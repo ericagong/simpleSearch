@@ -12,6 +12,7 @@ function routeRender(routes) {
   const routerView = document.querySelector("router-view");
   const [hash, queryString = ""] = location.hash.split("?");
 
+  // 쿼리 스트링을 객체로 변환해 history 객체 state에 저장
   // a=123&b=456
   // ['a=123', 'b=456']
   // {a: '123', b: '456'}
@@ -21,8 +22,9 @@ function routeRender(routes) {
     return acc;
   }, {});
 
-  history.replaceState(query, "");
+  history.replaceState(query, ""); // (상태, 제목)
 
+  // 현재 route 정보를 찾아 렌더링
   const currentRoute = routes.find((route) =>
     new RegExp(`${route.path}/?$`).test(hash)
   );
@@ -30,6 +32,7 @@ function routeRender(routes) {
   routerView.innerHTML = "";
   routerView.append(new currentRoute.component().element);
 
+  // 화면 출력 후 스크롤 위치 복구
   window.scrollTo(0, 0); // 페이지 최상단으로 이동
 }
 

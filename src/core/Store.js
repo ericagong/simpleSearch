@@ -8,7 +8,7 @@ export class Store {
         get: () => state[key],
         set: (value) => {
           state[key] = value; // 값 변경 즉시 반영
-          this.observers[key].forEach((observer) => observer(value)); // 변경 시 key에 등록해 둔 cb 함수들 호출
+          this.observers[key]?.forEach((observer) => observer(value)); // 변경 시 key에 등록해 둔 cb 함수들 호출
         },
       });
     }
