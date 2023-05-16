@@ -206,3 +206,43 @@ header {
     transform: rotate(360deg);
   }
 }
+
+/**
+ * the-movie router
+ */
+.the-movie {
+  color: var(--color-white-50);
+  display: flex;
+  gap: 70px;
+}
+.the-movie .poster {
+  /* 감소 너비 비율 미사용 */
+  flex-shrink: 0;
+  --width: 500px;
+  width: var(--width);
+  height: calc(var(--width) * 3 / 2);
+  border-radius: 10px;
+  /* 포스터가 배경 전체 덮도록 처리 */
+  background-size: cover;
+  background-color: var(--color-area);
+}
+.the-movie .specs {
+  flex-grow: 1;
+}
+.the-movie .title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 70px;
+  line-height: 1;
+  color: var(--color-white);
+  margin-bottom: 30px;
+}
+.the-movie .labels {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+.the-movie h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  color: var(--color-white);
+  margin: 24px 0 6px;
+}

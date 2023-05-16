@@ -14,7 +14,7 @@ export default class MovieItem extends Component {
     this.element.classList.add("movie");
 
     // a 태그에 대한 경로 속성 설정
-    this.element.setAttribute("href", `#/${movie.imdbID}`);
+    this.element.setAttribute("href", `#/movie?id=${movie.imdbID}`);
     // poster 배경 이미지 설정
     this.element.style.backgroundImage = `url(${movie.Poster})`;
 
