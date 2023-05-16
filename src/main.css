@@ -21,9 +21,81 @@ body {
   color: var(--color-white);
 }
 
-/* header {
+header {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
-} */
+}
+
+.container {
+  max-width: 1120px;
+  /* 화면 가운데 정렬 */
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.headline {
+  margin-bottom: 40px;
+}
+.headline h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 50px;
+  line-height: 1;
+  margin-bottom: 40px;
+}
+.headline h1 span {
+  color: var(--color-primary);
+}
+.headline p {
+  color: var(--color-white-50);
+}
+
+.btn {
+  background-color: var(--color-area);
+  height: 50px;
+  padding: 0 20px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: var(--color-hover);
+}
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+}
+.btn-primary:hover {
+  background-color: var(--color-hover);
+  color: var(--color-white);
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.search input {
+  flex-grow: 1;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--color-white);
+  background-color: var(--color-area);
+}
+.search input::placeholder {
+  color: var(--color-white-30);
+}
+.serach .btn {
+  flex-grow: 1;
+  max-width: 150;
+}
