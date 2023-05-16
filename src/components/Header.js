@@ -8,7 +8,7 @@ export default class Header extends Component {
   }
 
   render() {
-    this.element.innerHTML = `	
+    this.element.innerHTML = /* html */ `	
 			<a href='#/'/>Main</a>
 			<a href='#/about'/>About</a>
 		`;
