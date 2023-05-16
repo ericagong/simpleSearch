@@ -3,13 +3,23 @@ import movieStore, { getMovieDetails } from "../store/movie";
 
 export default class Movie extends Component {
   async render() {
+    this.element.classList.add("container", "the-movie");
+
+    this.element.innerHTML = /* html */ `
+			<div class="poster skeleton"></div>
+			<div class="specs">
+				<div class="title skeleton"></div>
+        <div class="labels skeleton"></div>
+        <div class="plot skeleton"></div>
+			</div>
+			
+		`;
+
     await getMovieDetails(history.state.id);
-    console.log(movieStore.state.movie);
 
     const { movie } = movieStore.state;
     const HDPoster = movie.Poster.replace("SX300", "SX700");
 
-    this.element.classList.add("container", "the-movie");
     // nbsp는 html 내부 띄어쓰기
     this.element.innerHTML = /* html */ `
 			<div class="poster" style="background-image: url(${HDPoster});"></div>
