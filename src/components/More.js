@@ -21,6 +21,7 @@ export default class More extends Component {
     this.element.textContent = "View more...";
 
     this.element.addEventListener("click", async () => {
+      this.element.classList.add("hide"); // 사용자 중복 클릭 방지를 위해 더보기 버튼 숨김
       movieStore.state.page += 1;
       await searchMovies(movieStore.state.page);
     });

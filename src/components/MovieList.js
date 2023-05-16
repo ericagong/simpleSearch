@@ -11,17 +11,24 @@ export default class MovieList extends Component {
     movieStore.subscribe("loading", () => {
       this.render();
     });
+    movieStore.subscribe("message", () => {
+      this.render();
+    });
   }
 
   render() {
     this.element.classList.add("movie-list");
     this.element.innerHTML = /*html*/ `
-			<div class="movies"></div>
+			${
+        movieStore.state.message
+          ? `<div class="message">${movieStore.state.message}</div>`
+          : '<div class="movies"></div>'
+      }
 			<div class="loader hide"></div>
 		`;
 
     const moviesElement = this.element.querySelector(".movies");
-    moviesElement.append(
+    moviesElement?.append(
       ...movieStore.state.movies.map(
         (movie) => new MovieItem({ movie }).element
       )
