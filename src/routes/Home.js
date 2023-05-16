@@ -6,10 +6,6 @@ import More from "../components/More";
 
 export default class Home extends Component {
   render() {
-    this.element.innerHTML = /*html*/ `
-			<h1>Home</h1>
-		`;
-
     this.element.classList.add("container");
     this.element.append(
       new Headline().element,
