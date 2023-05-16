@@ -9,10 +9,10 @@ export default class Home extends Component {
 			<h1>Home</h1>
 		`;
 
-    this.element.append(
-      new TextField().element,
-      new Message().element,
-      new Title().element
-    );
+    // this.element.append(
+    //   new TextField().element,
+    //   new Message().element,
+    //   new Title().element
+    // );
   }
 }
